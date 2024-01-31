@@ -31,3 +31,9 @@ body {
   color: #ffffff;
   border-radius: 10px;
 }
+
+.tech-stack__list {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
