@@ -9,7 +9,7 @@
 /* Task 2: Let's work on some basic stylings that we want to apply to all elements of your code via inheritance. Which selector do we need for this? */
 
 /* add selector */
- {
+body {
   font-family: monospace;
   font-size: 1rem;
   line-height: 1.5;
