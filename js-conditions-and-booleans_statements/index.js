@@ -27,16 +27,32 @@ if (number % 2 === 0) {
 // - for more than 100 but less than 1 000 000 hotdogs: 1 euro per hotdog
 // - for more than 1 000 000 hotdogs: 0.10 euro per hotdog
 // - change the `numberOfHotdogs` to see if your code works properly
-const numberOfHotdogs = 42;
+const numberOfHotdogs = 40;
 
 if (numberOfHotdogs < 5) {
-  console.log(numberOfHotdogs * 2);
+  console.log(
+    "The price of " +
+      numberOfHotdogs +
+      " hotdogs is " +
+      numberOfHotdogs * 2 +
+      " euros."
+  );
 } else if (numberOfHotdogs > 5 && numberOfHotdogs < 100) {
-  console.log(numberOfHotdogs * 1.5);
+  console.log(
+    numberOfHotdogs + " hotdogs cost " + numberOfHotdogs * 1.5 + " euros."
+  );
 } else if (numberOfHotdogs > 100 && numberOfHotdogs < 1000000) {
-  console.log(numberOfHotdogs * 1);
-} else if (numberOfHotdogs > 1000000) {
-  console.log(numberOfHotdogs * 0.1);
+  console.log(
+    numberOfHotdogs + " hotdogs cost " + numberOfHotdogs * 1 + " euros."
+  );
+} else {
+  console.log(
+    "You are getting " +
+      numberOfHotdogs +
+      " hotdogs for " +
+      numberOfHotdogs * 0.1 +
+      " euros."
+  );
 }
 
 // Part 4: Daytime
