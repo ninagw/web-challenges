@@ -62,7 +62,7 @@ h1 {
 .box--one {
   background-color: lightblue;
 
-  width: 50%; /* solution of Part 1: von 100px zu 50% */
+  width: 50%; /* solution of Part 1: von 100px zu 50% , ginge auch 16vw */
   height: 100px;
 }
 
@@ -96,7 +96,7 @@ h1 {
 /* solution of Part 3: */
 @media (orientation: landscape) {
   .box--three {
-    width: 250px;
+    width: 250px; /* solution: auch 100% */
     height: 50px;
   }
 }
