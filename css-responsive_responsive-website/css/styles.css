@@ -245,6 +245,11 @@ width, etc. */
 /* Media Query Tablet */
 
 @media screen and (min-width: 900px) {
+  .card-section {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }
 
 /* Media Query Desktop */
