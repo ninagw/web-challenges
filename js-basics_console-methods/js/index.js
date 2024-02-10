@@ -30,6 +30,6 @@ const error = "This is an error!";
 
 // 7. Which method is used to display an error message in the console? Use it do display the error message in the console.
 
-console.log(error);
+console.error();
 
 // Well done!
