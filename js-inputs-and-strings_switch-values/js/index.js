@@ -34,5 +34,4 @@ switchButton.addEventListener("click", () => {
   let originSecondInput = secondInput.value;
   firstInput.value = originSecondInput;
   secondInput.value = originFirstInput;
-  // secondInput.value = firstInput.value;
 });
