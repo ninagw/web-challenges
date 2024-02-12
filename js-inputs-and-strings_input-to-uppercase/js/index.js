@@ -18,4 +18,7 @@ buttonElement.addEventListener("click", () => {
   let firstValue = firstInput.value;
   let newValue = firstInput.value.toUpperCase();
   firstInput.value = newValue;
+
+  // easier solution:
+  // firstInput.value = firstInput.value.toUpperCase();
 });
