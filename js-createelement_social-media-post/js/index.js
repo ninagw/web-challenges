@@ -11,9 +11,9 @@ likeButton.addEventListener("click", handleLikeButtonClick);
 // Exercise:
 // Use document.createElement() and append another social media post to the body.
 
-const article = document.createElement("article"); // create new article
-article.classList.add("post");
-document.body.append(article);
+const article = document.createElement("article"); // create new article-element
+article.classList.add("post"); // add class-attribute to new article-element
+document.body.append(article); // implement new article-element in body
 
 const text = document.createElement("p");
 text.classList.add("post__content");
@@ -34,4 +34,4 @@ button.classList.add("post__button");
 button.textContent = " ♥ Like ";
 footer.append(button);
 
-button.addEventListener("click", handleLikeButtonClick);
+button.addEventListener("click", handleLikeButtonClick); // add like button click function
