@@ -5,7 +5,7 @@ const form = document.querySelector('[data-js="form"]');
 form.addEventListener("submit", (event) => {
   event.preventDefault();
 
-  const formElements = event.target.elements;
+  const formElements = event.target.elements; // spricht gesamtes form-element an
 
   console.log(formElements.firstName.value);
   console.log(formElements.lastName.value);
