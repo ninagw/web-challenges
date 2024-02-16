@@ -31,8 +31,17 @@ colors.forEach((color) => {
 // Task 2 –––––––––––––––––––––––––––––––––––––––––––––––
 
 function renderColorBox() {
-  const colorBox = document.createElement("div");
-  colorBox.classList.add("color-box");
-  colorBox.style.backgroundColor = color;
-  document.body.append(colorBox);
+  colors.forEach((color) => {
+    const colorBox = document.createElement("div");
+    colorBox.classList.add("color-box");
+    colorBox.style.backgroundColor = color;
+    document.body.append(colorBox);
+  });
 }
+
+renderColorBox.forEach(() => {
+  // const colorBox = document.createElement("div");
+  //   colorBox.classList.add("color-box");
+  //   colorBox.style.backgroundColor = colors.color;
+  //   document.body.append(colorBox);
+});
