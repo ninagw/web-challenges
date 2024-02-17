@@ -23,27 +23,37 @@ const cards = [
   },
 ];
 
-const onlyCardWithIdTwo = cards.filter((card) => {
-  if (card.id === 2) {
-    return true;
-  } else {
-    return false;
-  }
-});
+// TASK 1 ------------------------------------------
+// const onlyCardWithIdTwo = cards.filter((card) => {
+//   if (card.id == 2) {
+//     return true;
+//   } else {
+//     return false;
+//   }
+// });
+// console.log(onlyCardWithIdTwo);
+
+// kürzere Schreibweise:
+const onlyCardWithIdTwo = cards.filter((card) => card.id == 2); // in diesem Fall nur zwei == nutzen, damit die 2 trotz string-Schreibweise erkannt wird. Drei === würde als falsch ausgegeben, da typeOf 2 = number und typeOf "2" = string.
 console.log(onlyCardWithIdTwo);
 
-const allCardsWith3Tags = cards.filter((card) => {
-  if (array.length === 3) {
-    return true;
-  } else {
-    return false;
-  }
-});
+// TASK 2 ------------------------------------------
+const allCardsWith3Tags = cards.filter((card) => card.tags.length == 3);
 console.log(allCardsWith3Tags);
 
-const allCardsThatAreNotBookmarked = null;
+// TASK 3 ------------------------------------------
+const allCardsThatAreNotBookmarked = cards.filter(
+  (card) => card.isBookmarked == false
+);
+console.log(allCardsThatAreNotBookmarked);
 
-const allCardsWithTagsHTMLOrJSThatAreBookmarked = null;
+// TASK 4 ------------------------------------------
+const allCardsWithTagsHTMLOrJSThatAreBookmarked = cards.filter(
+  (card) =>
+    (card.isBookmarked && card.tags.includes("html")) ||
+    (card.isBookmarked && card.tags.includes("js"))
+);
+console.log(allCardsWithTagsHTMLOrJSThatAreBookmarked);
 
 export {
   onlyCardWithIdTwo,
