@@ -30,13 +30,6 @@ form.addEventListener("submit", (event) => {
   const checkboxOperator = formElements.operator;
   // const checkboxAddition = formElements.operator.addition;
 
-  console.log(formElements);
-  console.log(inputNumberA);
-  console.log(checkboxOperator);
-  console.log(checkboxOperator.value === "addition");
-
-  // console.log(checkboxAddition);
-
   if (checkboxOperator.value === "addition") {
     return add(inputNumberA, inputNumberB);
   } else if (checkboxOperator.value === "subtraction") {
