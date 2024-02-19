@@ -18,6 +18,7 @@ async function fetchData() {
 
   // log eye color of R2-D2:
   console.log(data.results[2].eye_color);
+  const foundCharacter = json.results.find(({ name }) => name == "R2-D2"); // without knowing the array position!
 
   return data;
 }

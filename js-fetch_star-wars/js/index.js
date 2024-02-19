@@ -41,13 +41,15 @@ fetchDataAndRender();
 
 // --v-- your code below this line --v--
 
-async function fetchDataAndRender() {
+async function fetchData() {
   const response = await fetch("https://swapi.dev/api/people");
-  const json = await response.json();
-  // const data = await response.json();
-  // console.log(data);
-  return json.results;
+  const data = await response.json();
+  return data.results;
 }
 
 // Create and render a card for each object in the fetched data array:
-data.forEach(card);
+async function fetchDataAndRender() {
+  const characters = fetchData();
+  //ERROR – folgende Zeile ist noch falsch:
+  characters.forEach((character) => caracter.card === renderElement(firstCard));
+}
