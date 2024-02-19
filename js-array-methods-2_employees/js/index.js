@@ -34,7 +34,10 @@ function findByCitySubString(employees, string) {
 // AND that is older than a specific age
 
 function findByProfessionSubStringAndAge(employees, string, age) {
-  return null;
+  return (
+    employees.find((employee) => employee.profession === string) &&
+    employees.find((employee) => employee.age > age)
+  );
 }
 
 // ------------------------------------------------------------------------------
