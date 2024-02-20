@@ -49,7 +49,28 @@ async function fetchData() {
 
 // Create and render a card for each object in the fetched data array:
 async function fetchDataAndRender() {
-  const characters = fetchData();
+  const characters = await fetchData();
   //ERROR – folgende Zeile ist noch falsch:
   characters.forEach((character) => caracter.card === renderElement(firstCard));
+
+  //  const cards = await Card(fetchData());
+  //  const charactercard = cards.forEach((card) => renderElement(card));
+
+  // JANAS LÖSUNG:
+  // const url = "https://swapi.dev/api/people";
+  // async function fetchData() {
+  //   const response = await fetch(url);
+  //   const json = await response.json();
+  //   return json.results;
+  // }
+
+  // async function fetchDataAndRender() {
+  //   const allCharacters = await fetchData();
+
+  //   allCharacters.forEach((allCharacter) => {
+  //     const card = Card(allCharacter);
+  //     renderElement(card);
+  //   });
+  // }
+  // fetchDataAndRender();
 }
