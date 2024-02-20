@@ -20,20 +20,12 @@ form.addEventListener("submit", (event) => {
   const firstNumber = Number(event.target.firstNumber.value);
   const secondNumber = Number(event.target.secondNumber.value);
   const operation = event.target.operation.value;
-  output.innerText = operations[operation](firstNumber, secondNumber);
+  // output.innerText = operations[operation](firstNumber, secondNumber); // hier entsteht Fehler, daher würde Browser nicht weitergehen, daher Zeile löschen
+
+  try {
+    output.innerText = operations[operation](firstNumber, secondNumber);
+  } catch (error) {
+    output.innerText = error.message;
+    console.error(error.message);
+  }
 });
-
-try {
-  output.innerText = operations[operation](firstNumber, secondNumber);
-} catch (error) {
-  output.innerText = error.message;
-  console.error(error.message);
-}
-
-// aus Beispiel:
-// try {
-//   const result = divide(firstInput, secondInput);
-//   console.log(`${firstInput} times ${secondInput} equals to ${result}`);
-// } catch (error) {
-//   console.log("Please pass a number rather than 0 as divisor, thank you!");
-// }
