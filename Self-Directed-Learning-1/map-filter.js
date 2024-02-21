@@ -58,7 +58,7 @@ function getUsersOlderThan(users, number) {
 // returns an array with the first names of the users older than the passed number.
 
 function getNamesOlderThan(users, number) {
-  return getUsersOlderThan().users.map((user) => user.first_name); // could I use function in function?
+  return getUsersOlderThan(users, number).users.map((user) => user.first_name); // could I use function in function?
 
   // DIEGO's LÖSUNG:
   //   return users
