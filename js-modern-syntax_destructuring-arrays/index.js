@@ -14,7 +14,7 @@ console.log(name, price, quantity);
 // Use array destructuring to extract the variables "firstNameOfChris", "lastNameOfChris" and "ageOfChris".
 
 const personChris = [12, "Chris", "Owen"];
-const [ageOfChris, firstNameOfChris, lastNameOfChris] = personChris;
+export const [ageOfChris, firstNameOfChris, lastNameOfChris] = personChris;
 
 console.log(ageOfChris);
 console.log(firstNameOfChris);
@@ -25,7 +25,7 @@ console.log(lastNameOfChris);
 // Make sure not to have unused variables.
 
 const personAlex = ["Alex", 12, "Main"];
-const [firstNameOfAlex, , lastNameOfAlex] = personAlex;
+export const [firstNameOfAlex, , lastNameOfAlex] = personAlex;
 
 console.log(firstNameOfAlex);
 console.log(personAlex[1]);
@@ -36,7 +36,7 @@ console.log(lastNameOfAlex);
 // as variable called "lastName".
 
 const students = ["Christina", "Jon", "Alexandare"];
-const [, , lastName] = students;
+export const [, , lastName] = students;
 
 console.log(lastName);
 
@@ -45,7 +45,8 @@ console.log(lastName);
 // Assign the given order of students to variables called "student1" to "student5".
 
 const nestedStudents = ["Chris", ["Ahmad", "Antigoni"], ["Toby", "Sam"]];
-const [student1, [student2, student3], [student4, student5]] = nestedStudents;
+export const [student1, [student2, student3], [student4, student5]] =
+  nestedStudents;
 
 console.log(student4);
 
