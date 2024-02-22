@@ -42,8 +42,10 @@ const data = [
 // returns an array of their full names (e.g. ['John Doe', 'Jane Doe']).
 
 function getFullNames(users) {
-  return users.map((user) => `${data.first_name} ${data.last_name}`);
+  //users ist einfach ein parameter, der frei gewählt werden kann
+  return users.map((user) => `${user.first_name} ${user.last_name}`);
 }
+// console.log(getFullNames(data));
 
 // TASK 2 – Write a function called getUsersOlderThan that:
 // takes an array of users and a number;
@@ -52,16 +54,19 @@ function getFullNames(users) {
 function getUsersOlderThan(users, number) {
   return users.filter((user) => user.age > number); // warum hier filter() und nicht map()?
 }
+// console.log(getUsersOlderThan(data, 40));
 
 // TASK 3 – Write a function called getNamesOlderThan that:
 // takes an array of users and a number;
 // returns an array with the first names of the users older than the passed number.
 
 function getNamesOlderThan(users, number) {
-  return getUsersOlderThan(users, number).users.map((user) => user.first_name); // could I use function in function?
-
+  return getUsersOlderThan(users, number).map((user) => user.first_name);
+  //   return getUsersOlderThan(users, number).users.map((user) => user.first_name); // could I use function in function? ja Zeile 64
   // DIEGO's LÖSUNG:
   //   return users
   //     .filter((user) => user.age > number)
   //     .map((user) => user.first_name);
 }
+
+console.log(getNamesOlderThan(data, 40));
