@@ -63,6 +63,7 @@ function getUsersOlderThan(users, number) {
 function getNamesOlderThan(users, number) {
   return getUsersOlderThan(users, number).map((user) => user.first_name);
   //   return getUsersOlderThan(users, number).users.map((user) => user.first_name); // could I use function in function? ja Zeile 64
+
   // DIEGO's LÖSUNG:
   //   return users
   //     .filter((user) => user.age > number)
