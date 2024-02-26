@@ -1,7 +1,5 @@
 import "./styles.css";
 
-import avatar from "./img/avatar.jpg";
-import logo from "./img/logo.jpg";
 import Header from "./components/Header.js";
 import Navigation from "./components/Navigation.js";
 import Link from "./components/Link.js";
