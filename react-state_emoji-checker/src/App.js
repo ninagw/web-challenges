@@ -5,6 +5,10 @@ export default function App() {
   // let code = "?";
   const [code, setCode] = useState("");
 
+  function handleClick(event) {
+    setCode(code + event.target.textContent);
+  }
+
   const validCode = "🐡🐠🐋";
 
   return (
@@ -13,7 +17,7 @@ export default function App() {
         <button
           type="button"
           onClick={() => {
-            console.log("Update Code!");
+            handleClick("🐡");
           }}
         >
           <span role="img" aria-label="Pufferfish">
@@ -23,7 +27,7 @@ export default function App() {
         <button
           type="button"
           onClick={() => {
-            console.log("Update Code!");
+            handleClick("🐋");
           }}
         >
           <span role="img" aria-label="Whale">
@@ -33,7 +37,7 @@ export default function App() {
         <button
           type="button"
           onClick={() => {
-            console.log("Update Code!");
+            handleClick("🐠");
           }}
         >
           <span role="img" aria-label="Clownfish">
@@ -45,7 +49,7 @@ export default function App() {
       <button
         type="button"
         onClick={() => {
-          console.log("Reset Code!");
+          setCode(""); //entfernt alle vorherigen Eingaben, um erneut zu beginnen
         }}
       >
         Reset
