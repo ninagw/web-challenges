@@ -21,7 +21,7 @@ export default function App() {
         onAddPeople={handleAddPeople}
         onSubtractPeople={handleSubtractPeople}
       />
-      <p>You are going to reserve a table for 2 people.</p>
+      <p>You are going to reserve a table for {people} people.</p>
     </div>
   );
 }
