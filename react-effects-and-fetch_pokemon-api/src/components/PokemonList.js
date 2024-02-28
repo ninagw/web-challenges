@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 
 export default function PokemonList() {
   const [pokemon, setPokemon] = useState([]);
-  // const [data, setData] = useState();
 
   useEffect(() => {
     async function loadPokemon() {
