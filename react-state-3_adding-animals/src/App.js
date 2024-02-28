@@ -35,7 +35,7 @@ export default function App() {
 
     setAnimals([
       ...animals, // erstellt Kopie aller Tiere aus meinem ursprünglichen Array "initialAnimals"
-      { id: uid(), name: animalName, emoji: animalEmoji }, // erstellt neues Tier-Objekt und fügt sie dem kopierten Animal-Array hinzu.
+      { id: uid(), name: animalName, emoji: animalEmoji }, // erstellt neues Tier-Objekt und fügt sie mit unique ID dem kopierten Animal-Array hinzu.
     ]);
   }
 
