@@ -43,7 +43,7 @@ function App() {
   });
   const [filter, setFilter] = useLocalStorageState("filter", {
     defaultValue: "all",
-  }); // "all" or "favorites"
+  }); // "all" or "favorites" // in diesem Fall wäre local storage nicht nötig, da ich alle entries bereits gespeichert hätte. Für User Experience jedoch nett, wenn alle Einträge in Favouriten ebenfalls gespeichert würden.
 
   function handleAddEntry(newEntry) {
     const date = new Date().toLocaleDateString("en-us", {
