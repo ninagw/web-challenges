@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Light from "../Light";
+import { useState } from "react";
 
 const StyledLights = styled.ul`
   list-style-type: none;
@@ -11,10 +12,21 @@ const StyledLights = styled.ul`
   justify-content: center;
 `;
 
-export default function Lights() {
+export default function Lights({ lights }) {
+  function toggleLight() {
+    setLights(!lights);
+    // lights.map((light) => light.id === lightId ? (...light, isOn: true) : light)
+    // );
+  }
+
   return (
     <StyledLights>
-      <li>
+      {lights.map((light) => (
+        <li key={light.id}>
+          <Light light={light.name} onToggle={() => toggleLight(light.id)} />
+        </li>
+      ))}
+      {/* <li>
         <Light name="Living Room" />
       </li>
       <li>
@@ -37,7 +49,7 @@ export default function Lights() {
       </li>
       <li>
         <Light name="Office" />
-      </li>
+      </li> */}
     </StyledLights>
   );
 }
