@@ -17,8 +17,8 @@ export default function Lights({ lights, onToggle }) {
       {lights.map((light) => (
         <li key={light.id}>
           <Light light={light} onToggle={onToggle} />
-          {/* Warum folgende Zeile nicht notwendig? */}
-          {light.name}
+          {/* Warum folgende Zeile nicht notwendig? Name des Raums wird in Light.js festgelegt.*/}
+          {/* {light.name} */}
         </li>
       ))}
       {/* <li>
