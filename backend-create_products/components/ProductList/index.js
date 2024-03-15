@@ -4,6 +4,7 @@ import { StyledLink } from "../Link/Link.styled";
 
 export default function ProductList() {
   const { data, isLoading } = useSWR("/api/products");
+  console.log("DATA", data);
 
   if (isLoading) {
     return <h1>Loading...</h1>;
