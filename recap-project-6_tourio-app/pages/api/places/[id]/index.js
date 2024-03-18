@@ -8,9 +8,9 @@ export default async function handler(request, response) {
 
   if (request.method === "GET") {
     const place = await Place.findById(id);
-    return response.status(200).json(place);
+    response.status(200).json(place);
   } else {
-    return response.status(404).json({ status: "Not found" });
+    response.status(404).json({ status: "Not found" });
   }
 
   if (request.method === "PATCH") {
