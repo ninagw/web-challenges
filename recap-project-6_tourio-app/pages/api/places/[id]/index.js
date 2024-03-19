@@ -6,20 +6,35 @@ export default async function handler(request, response) {
   await dbConnect();
   const { id } = request.query;
 
+  if (!id) {
+    return;
+  }
+
   if (request.method === "GET") {
-    const place = await Place.findById(id);
-    response.status(200).json(place);
-  } else {
-    response.status(404).json({ status: "Not found" });
+    try {
+      const place = await Place.findById(id);
+      return response.status(200).json(place);
+    } catch (error) {
+      return response.status(404).json({ error: "Not found" });
+    }
   }
 
   if (request.method === "PATCH") {
     try {
       const updatePlace = request.body;
       await Place.findByIdAndUpdate(id, updatePlace);
-      response.status(200).json({ message: `Place ${id} updated!` });
+      return response.status(200).json({ message: `Place ${id} updated!` });
     } catch (error) {
-      response.status(404).json({ error: "Not found." });
+      return response.status(404).json({ error: "Not found." });
+    }
+  }
+
+  if (request.method === "DELETE") {
+    try {
+      await Place.findByIdAndDelete(id);
+      return response.status(200).json({ message: `Place ${id} deleted!` });
+    } catch (error) {
+      return response.status(404).json({ error: "Not found." });
     }
   }
 }
