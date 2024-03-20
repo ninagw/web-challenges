@@ -58,6 +58,7 @@ export default function Product() {
           onSubmit={handleEditProduct}
           value={data.product}
           isEditMode={true}
+          // title="Edit product" für Bonusaufgabe
         />
       )}
       <StyledLink href="/">Back to all</StyledLink>
