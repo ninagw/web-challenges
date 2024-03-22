@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const StyledForm = styled.div`
+const StyledForm = styled.form`
   display: flex;
   flex-direction: column;
   gap: 5px;
@@ -12,33 +12,31 @@ const StyledButton = styled.button`
   margin-top: 20px;
 `;
 
-export default function Form({ places }) {
-  // function handleEdit(event) {
-  //   event.preventDefault();
+export default function Form({ places, onAddPlace }) {
+  function handleSubmit(event) {
+    event.preventDefault();
 
-  //   const newName = event.target.name;
-  //   const newLocation = event.target.location;
-  //   const newImageURL = event.target.image;
+    const formData = new FormData(event.target);
+    const newPlaceData = Object.fromEntries(formData);
 
-  //   event.target.reset;
-  //   event.target.name.focus();
-  // }
+    console.log("NEW_PLACE_DATA: ", newPlaceData);
 
-  //   setPlaces([...places]);
+    onAddPlace(newPlaceData);
+  }
 
   return (
     <>
       <h1>Add a new place:</h1>
-      <StyledForm>
-        <label for="name">Name:</label>
+      <StyledForm onSubmit={handleSubmit}>
+        <label htmlFor="name">Name:</label>
         <input id="name" name="name" />
-        <label for="location">Location:</label>
+        <label htmlFor="location">Location:</label>
         <input id="location" name="location" />
-        <label for="mapURL">mapURL:</label>
+        <label htmlFor="mapURL">mapURL:</label>
         <input id="mapURL" name="mapURL" />
-        <label for="image">Image:</label>
+        <label htmlFor="image">Image:</label>
         <input id="image" name="image" />
-        <label for="description">Description:</label>
+        <label htmlFor="description">Description:</label>
         <input id="description" name="description" />
         <StyledButton type="submit">Submit</StyledButton>
       </StyledForm>
