@@ -1,16 +1,19 @@
-import { initialPlaces } from "@/lib/db.js";
-import { useState } from "react";
 import PlaceCard from "@/components/PlaceCard";
+import Link from "next/link";
+import styled from "styled-components";
 
-export default function HomePage() {
-  const [places, setPlaces] = useState(initialPlaces);
+const StyledLink = styled.a`
+  display: flex;
+  border: 2px;
+  background-color: orange;
+`;
 
-  console.log("INITIAL_PLACES: ", places);
-
+export default function HomePage({ places, onAddPlace }) {
   return (
     <div>
       <h1>Moin Hamburg! || Touri App</h1>
       <PlaceCard places={places} />
+      <StyledLink href="/create">+ create new place</StyledLink>
     </div>
   );
 }
