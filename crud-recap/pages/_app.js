@@ -13,6 +13,12 @@ export default function App({ Component, pageProps }) {
     setPlaces([...places, newPlace]);
   }
 
+  // JANAs Ansatz:
+  // function handleAddPlace(placeData) {
+  //   const { name, location, image, mapURL, description } = placeData;
+  //   setPlaces([...places, { id: uuidv4(), name, location, image, mapURL, description }]);
+  // }
+
   return (
     <>
       <GlobalStyle />

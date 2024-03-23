@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { useRouter } from "next/router";
 
 const StyledForm = styled.form`
   display: flex;
@@ -13,6 +14,8 @@ const StyledButton = styled.button`
 `;
 
 export default function Form({ places, onAddPlace }) {
+  const router = useRouter();
+
   function handleSubmit(event) {
     event.preventDefault();
 
@@ -22,7 +25,22 @@ export default function Form({ places, onAddPlace }) {
     console.log("NEW_PLACE_DATA: ", newPlaceData);
 
     onAddPlace(newPlaceData);
+    // onSubmit(newPlaceData);
+    router.push("/");
   }
+
+  // KRISCHANS LÖSUNG:
+  // function handleSubmit(event) {
+  //   event.preventDefault();
+  //   const formData = new FormData(event.target);
+  //   const data = Object.fromEntries(formData);
+  //   if (onAddPlace) {
+  //     onAddPlace(data);
+  //   } else if (onEditPlace) {
+  //     onEditPlace(id, data);
+  //   }
+  //   router.push("/");
+  // }
 
   return (
     <>
