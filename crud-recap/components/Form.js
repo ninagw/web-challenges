@@ -13,7 +13,7 @@ const StyledButton = styled.button`
   margin-top: 20px;
 `;
 
-export default function Form({ places, onAddPlace }) {
+export default function Form({ places, onSubmit }) {
   const router = useRouter();
 
   function handleSubmit(event) {
@@ -24,8 +24,8 @@ export default function Form({ places, onAddPlace }) {
 
     console.log("NEW_PLACE_DATA: ", newPlaceData);
 
-    onAddPlace(newPlaceData);
-    // onSubmit(newPlaceData);
+    // onAddPlace(newPlaceData);
+    onSubmit(newPlaceData);
     router.push("/");
   }
 
