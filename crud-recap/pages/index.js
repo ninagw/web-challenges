@@ -2,10 +2,10 @@ import PlaceCard from "@/components/PlaceCard";
 import Link from "next/link";
 import styled from "styled-components";
 
-const StyledLink = styled.a`
-  display: flex;
-  border: 2px;
+const StyledButton = styled.button`
   background-color: orange;
+  display: flex;
+  align-items: flex-end;
 `;
 
 export default function HomePage({ places, onAddPlace }) {
@@ -13,7 +13,9 @@ export default function HomePage({ places, onAddPlace }) {
     <div>
       <h1>Moin Hamburg! || Touri App</h1>
       <PlaceCard places={places} />
-      <StyledLink href="/create">+ create new place</StyledLink>
+      <StyledButton>
+        <a href="/create">+ ADD NEW PLACE</a>
+      </StyledButton>
     </div>
   );
 }
