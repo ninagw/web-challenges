@@ -5,7 +5,7 @@ import styled from "styled-components";
 const StyledButton = styled.button`
   background-color: orange;
   display: flex;
-  align-items: flex-end;
+  align-content: center;
 `;
 
 export default function HomePage({ places, onAddPlace }) {
