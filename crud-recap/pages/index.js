@@ -14,7 +14,7 @@ export default function HomePage({ places, onAddPlace }) {
       <h1>Moin Hamburg! || Touri App</h1>
       <PlaceCard places={places} />
       <StyledButton>
-        <a href="/create">+ ADD NEW PLACE</a>
+        <Link href="/create">+ ADD NEW PLACE</Link>
       </StyledButton>
     </div>
   );

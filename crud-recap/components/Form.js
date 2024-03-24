@@ -13,7 +13,7 @@ const StyledButton = styled.button`
   margin-top: 20px;
 `;
 
-export default function Form({ places, onAddPlace, onSubmit }) {
+export default function Form({ places, onAddPlace }) {
   const router = useRouter();
 
   function handleSubmit(event) {
@@ -25,7 +25,6 @@ export default function Form({ places, onAddPlace, onSubmit }) {
     console.log("NEW_PLACE_DATA: ", newPlaceData);
 
     onAddPlace(newPlaceData);
-    //onSubmit(newPlaceData);
     router.push("/");
   }
 
@@ -45,7 +44,7 @@ export default function Form({ places, onAddPlace, onSubmit }) {
   return (
     <>
       <h1>Add a new place:</h1>
-      <StyledForm onSubmit={handleSubmit}>
+      <StyledForm aria-labelledby="Add a new place" onSubmit={handleSubmit}>
         <label htmlFor="name">Name:</label>
         <input id="name" name="name" />
         <label htmlFor="location">Location:</label>
@@ -53,7 +52,7 @@ export default function Form({ places, onAddPlace, onSubmit }) {
         <label htmlFor="mapURL">mapURL:</label>
         <input id="mapURL" name="mapURL" />
         <label htmlFor="image">Image:</label>
-        <input id="image" name="image" />
+        <input id="image" name="image" src={newPlaceData.image} />
         <label htmlFor="description">Description:</label>
         <input id="description" name="description" />
         <StyledButton type="submit">Submit</StyledButton>
