@@ -4,7 +4,7 @@ import Form from "@/components/Form";
 export default function addPlaces({ places, onAddPlace }) {
   return (
     <>
-      <Form places={places} onSubmit={onAddPlace} />
+      <Form places={places} onAddPlace={onAddPlace} />
       <Link href="/">← Back to Homepage</Link>
     </>
   );

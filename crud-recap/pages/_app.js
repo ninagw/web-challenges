@@ -8,6 +8,7 @@ export default function App({ Component, pageProps }) {
   // console.log("INITIAL_PLACES: ", places);
 
   function handleAddPlace(newPlaceData) {
+    const { name, location, image, mapURL, description } = newPlaceData;
     const newPlace = { id: uuidv4(), newPlaceData };
 
     setPlaces([...places, newPlace]);
