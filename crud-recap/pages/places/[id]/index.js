@@ -1,4 +1,6 @@
 import { useRouter } from "next/router";
+import Image from "next/image";
+import Link from "next/link";
 
 export default function DetailPage({ places }) {
   const router = useRouter();
@@ -9,8 +11,16 @@ export default function DetailPage({ places }) {
 
   return (
     <>
-      <h1>Detail Page</h1>
-      {places.find((place) => place.name)}
+      <h1>{onePlaceById.name}</h1>
+      <p>{onePlaceById.location}</p>
+      <Image
+        src={onePlaceById.image}
+        alt={onePlaceById.name}
+        width={300}
+        height={200}
+      />
+      <p>{onePlaceById.description}</p>
+      {/* <Link>{onePlaceById.mapURL}</Link> */}
     </>
   );
 }
