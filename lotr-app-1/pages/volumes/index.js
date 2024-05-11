@@ -1,5 +1,6 @@
 import { introduction } from "@/resources/lib/data";
 import Link from "next/link";
+import Volume1 from "./the-fellowship-of-the-ring.js";
 
 export default function Volumes() {
   return (
