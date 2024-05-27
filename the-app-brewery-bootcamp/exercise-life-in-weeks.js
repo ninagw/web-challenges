@@ -9,6 +9,17 @@
 
 // Where x, y and z are replaced with the actual calculated numbers.
 
+function lifeInWeeks(age) {
+  let yearsLeft = 90 - age;
+  let x = yearsLeft * 365;
+  let y = yearsLeft * 52;
+  let z = yearsLeft * 12;
+  console.log(
+    "You have " + x + " days, " + y + " weeks, and " + z + " months left."
+  );
+}
+
+lifeInWeeks(age);
 // For this challenge, assume there are 365 days in a year, 52 weeks in a year and 12 months in a year.
 
 // IMPORTANT your console.log output should match the Example Output format exactly, even the positions of the commas and full stops.
