@@ -1,9 +1,9 @@
 const fs = require("fs");
 
-// fs.writeFile("message.txt", "Hello from NodeJS", (error) => {
-//   if (error) throw error;
-//   console.log("The file has been saved!");
-// });
+fs.writeFile("message.txt", "Hello from NodeJS", (error) => {
+  if (error) throw error;
+  console.log("The file has been saved!");
+});
 
 fs.readFile("./message.txt", "utf8", (err, data) => {
   if (err) throw err;
