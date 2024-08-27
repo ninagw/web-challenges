@@ -4,22 +4,38 @@
 3. Create a txt file to save the user input using the native fs node module.
 */
 
-const fs = require("fs");
-
 import inquirer from "inquirer";
-// import qr-image from "qr-image";
+import qr from "qr-image";
+import fs from "fs";
 
-const userInput = inquirer.readFile("./URL.txt");
-console.log(userInput);
+inquirer
+  .prompt([
+    {
+      message: "Type in your URL: ",
+      name: "URL",
+    },
+  ])
+  .then((answers) => {
+    const url = answers.URL;
+    var qr_png = qr.image(url, { type: "png" });
+    qr_png.pipe(fs.createWriteStream("qr_img.png"));
+  })
+  .catch((error) => {
+    if (error.isTtyError) {
+      // Prompt couldn't be rendered in the current environment
+    } else {
+      // Something else went wrong
+    }
+  });
 
-// var img = require('qr-image');
+// const userInput = inquirer.readFile("./URL.txt");
+// console.log(userInput);
 
-// var img_png = img.image(userInput, { type: 'png' });
-// img_png.pipe(require('fs').createWriteStream(userInput));
+// var img = require("qr-image");
 
-// var png_string = qr.imageSync('I love QR!', { type: 'png' });
+// var png_string = qr.imageSync("I love QR!", { type: "png" });
 
-fs.writeFile("message.txt", data, (err) => {
-  if (err) throw err;
-  console.log("The file has been saved.");
-});
+// fs.writeFile("message.txt", data, (err) => {
+//   if (err) throw err;
+//   console.log("The file has been saved.");
+// });
