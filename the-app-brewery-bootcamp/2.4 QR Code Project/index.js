@@ -19,6 +19,11 @@ inquirer
     const url = answers.URL;
     var qr_png = qr.image(url, { type: "png" });
     qr_png.pipe(fs.createWriteStream("qr_img.png"));
+
+    fs.writeFile("URL2.txt", url, (err) => {
+      if (err) throw err;
+      console.log("The file has been saved.");
+    });
   })
   .catch((error) => {
     if (error.isTtyError) {
@@ -27,15 +32,3 @@ inquirer
       // Something else went wrong
     }
   });
-
-// const userInput = inquirer.readFile("./URL.txt");
-// console.log(userInput);
-
-// var img = require("qr-image");
-
-// var png_string = qr.imageSync("I love QR!", { type: "png" });
-
-// fs.writeFile("message.txt", data, (err) => {
-//   if (err) throw err;
-//   console.log("The file has been saved.");
-// });
